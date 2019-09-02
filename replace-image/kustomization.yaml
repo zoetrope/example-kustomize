@@ -4,11 +4,11 @@ resources:
 - pod1.yaml
 - pod2.yaml
 images:
-# kustomize edit set image ubuntu=quay.io/cybozu/ubuntu:18.04
+# Added by `kustomize edit set image ubuntu=example/ubuntu:18.04`
 - name: ubuntu
-  newName: quay.io/cybozu/ubuntu
+  newName: example/ubuntu
   newTag: "18.04"
-# kustomize edit set image ubuntu-debug=quay.io/cybozu/ubuntu-debug:18.04
+# Added by `kustomize edit set image ubuntu-debug=example/ubuntu-debug:18.04`
 - name: ubuntu-debug
-  newName: quay.io/cybozu/ubuntu-debug
+  newName: example/ubuntu-debug
   newTag: "18.04"
