@@ -1,0 +1,7 @@
+# Remove container[0]
+- op: remove
+  path: /spec/template/spec/containers/0
+# Change replicas to 999
+- op: replace
+  path: /spec/replicas
+  value: 999
