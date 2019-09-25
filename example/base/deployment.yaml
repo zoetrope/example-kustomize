@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment1
+  labels:
+    app: hoge
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: hoge
+  template:
+    metadata:
+      labels:
+        app: hoge
+    spec:
+      containers:
+      - name: example-container
+        image: ubuntu:latest
+        command: ['sh', '-c', 'sleep 3600']
+      - name: example-container2
+        image: ubuntu-debug:latest
+        command: ['sh', '-c', 'sleep 3600']
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment2
+  labels:
+    app: piyo
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: piyo
+  template:
+    metadata:
+      labels:
+        app: piyo
+    spec:
+      containers:
+      - name: example-container
+        image: debian:latest
+        command: ['sh', '-c', 'sleep 3600']
+      - name: example-container2
+        image: debian-debug:latest
+        command: ['sh', '-c', 'sleep 3600']
