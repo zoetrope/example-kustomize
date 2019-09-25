@@ -1,0 +1,20 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- ../base
+configMapGenerator:
+# Generate config map: name = configmap-foo, with label and annotation.
+- name: configmap-foo
+  files:
+  - config1.txt
+# Generate config map: name = configmap-bar, with label and annotation.
+- name: configmap-bar
+  files:
+  - config2.txt
+
+generatorOptions:
+  disableNameSuffixHash: true
+  labels:
+    label-hote: hoge
+  annotations:
+    annotation-piyo: piyo

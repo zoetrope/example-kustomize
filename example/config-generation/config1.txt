@@ -1,0 +1,3 @@
+hoge = foo
+piyo = bar
+fuga = baz
