@@ -1,0 +1,7 @@
+apiVersion: myapiversion
+kind: mykind
+metadata:
+  name: k8srequiredlabelsconfig
+name: k8srequiredlabels
+namespace: piyopiyo
+file: sample.rego
