@@ -1,0 +1,13 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment1
+spec:
+  replicas: 999
+  template:
+    spec:
+      containers:
+      - name: example-container
+        image: example:2019
+      - $patch: delete
+        name: example-container2

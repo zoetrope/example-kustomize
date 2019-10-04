@@ -1,5 +1,4 @@
-/bin/kustomize2
-/bin/kustomize3
+/bin/kustomize
 /vendor
 /go.sum
 *.so

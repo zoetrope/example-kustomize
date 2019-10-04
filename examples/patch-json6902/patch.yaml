@@ -1,7 +1,11 @@
-# Remove container[0]
-- op: remove
-  path: /spec/template/spec/containers/0
 # Change replicas to 999
 - op: replace
   path: /spec/replicas
   value: 999
+# Change container[0] image
+- op: replace
+  path: /spec/template/spec/containers/0/image
+  value: example:2019
+# Remove container[1]
+- op: remove
+  path: /spec/template/spec/containers/1

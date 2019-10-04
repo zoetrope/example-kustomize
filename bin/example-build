@@ -7,16 +7,15 @@ export XDG_CONFIG_HOME=${PLUGIN_DIR}
 
 KUSTOMIZE=${EXAMPLE_ROOT}/bin/kustomize3
 
-TARGET_BASE=${EXAMPLE_ROOT}/example/base
-TARGET=$1
-
 echo hoge ${XDG_CONFIG_HOME}
 
 echo "=== kustomize version ==="
 ${KUSTOMIZE} version
 
 echo "=== kustomize build ==="
+TARGET=$1
 ${KUSTOMIZE} build --enable_alpha_plugins ${TARGET}
 
-#echo "=== diff base -> target ==="
-#diff -u <(${KUSTOMIZE} build ${TARGET_BASE}) <(${KUSTOMIZE} build ${TARGET})
+echo "=== diff base -> target ==="
+TARGET_BASE=${EXAMPLE_ROOT}/examples/base
+diff -u <(${KUSTOMIZE} build ${TARGET_BASE}) <(${KUSTOMIZE} build ${TARGET})
