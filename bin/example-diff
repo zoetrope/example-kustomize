@@ -1,0 +1,16 @@
+#!/bin/bash
+
+EXAMPLE_ROOT=$(cd $(dirname $0); pwd)/../
+EXAMPLE_BASE=${EXAMPLE_ROOT}/examples/base
+KUSTOMIZE=${EXAMPLE_ROOT}/bin/kustomize3
+
+TARGET=$1
+
+if [[ -x `which colordiff` ]]; then
+  # sudo apt-get install colordiff
+  DIFF='colordiff'
+else
+  DIFF='diff'
+fi
+
+${DIFF} -u1000 <(${KUSTOMIZE} build ${EXAMPLE_BASE}) <(${KUSTOMIZE} build ${TARGET})

@@ -17,4 +17,4 @@ ${KUSTOMIZE} build ${TARGET}
 # ${KUSTOMIZE} build --enable_alpha_plugins ${TARGET}
 
 echo "=== diff base -> target ==="
-diff -u10 <(${KUSTOMIZE} build ${EXAMPLE_BASE}) <(${KUSTOMIZE} build ${TARGET})
+diff -u <(${KUSTOMIZE} build ${EXAMPLE_BASE}) <(${KUSTOMIZE} build ${TARGET})
