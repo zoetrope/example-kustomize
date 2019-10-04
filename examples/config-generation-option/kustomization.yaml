@@ -2,6 +2,7 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
 - ../base
+
 configMapGenerator:
 # Generate config map: name = configmap-foo, with label and annotation.
 - name: configmap-foo
@@ -14,7 +15,8 @@ configMapGenerator:
 
 generatorOptions:
   disableNameSuffixHash: true
-  labels:
-    label-hoge: hoge
   annotations:
-    annotation-piyo: piyo
+    annotation-hoge: hoge
+    annotation-fuga: fuga
+  labels:
+    label-piyo: piyo

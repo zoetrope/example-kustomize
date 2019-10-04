@@ -4,6 +4,9 @@ metadata:
   name: pod1
   labels:
     app: example
+    label-piyo: piyo
+    label-fuga: foobar
+
 spec:
   containers:
   - name: example-container

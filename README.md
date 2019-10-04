@@ -4,6 +4,8 @@ Kustomize v3.1.0 の設定例です。
 
 ## 使い方
 
+### 準備
+
 以下で、チェックアウト及び kustomize のバイナリをダウンロードします。
 
 ``` console
@@ -12,10 +14,16 @@ $ cd example-kustomize
 $ make setup
 ```
 
+### ビルド
+
 以下でサンプルのビルドができます。
 
 ``` console
 $ bin/example-build examples/<dir>
+```
+
+``` console
+$ bin/example-diff examples/<dir>
 ```
 
 実行例は以下のとおり。ビルド結果とbaseとの差分が表示されます。
