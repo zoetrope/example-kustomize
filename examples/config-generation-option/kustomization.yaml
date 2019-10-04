@@ -15,6 +15,6 @@ configMapGenerator:
 generatorOptions:
   disableNameSuffixHash: true
   labels:
-    label-hote: hoge
+    label-hoge: hoge
   annotations:
     annotation-piyo: piyo
