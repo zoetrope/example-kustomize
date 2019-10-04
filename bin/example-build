@@ -1,21 +1,20 @@
 #!/bin/bash
 
 EXAMPLE_ROOT=$(cd $(dirname $0); pwd)/../
-
-PLUGIN_DIR=${EXAMPLE_ROOT}/plugins
-export XDG_CONFIG_HOME=${PLUGIN_DIR}
-
+EXAMPLE_BASE=${EXAMPLE_ROOT}/examples/base
 KUSTOMIZE=${EXAMPLE_ROOT}/bin/kustomize3
 
-echo hoge ${XDG_CONFIG_HOME}
+TARGET=$1
+
+# PLUGIN_DIR=${EXAMPLE_ROOT}/plugins
+# export XDG_CONFIG_HOME=${PLUGIN_DIR}
 
 echo "=== kustomize version ==="
 ${KUSTOMIZE} version
 
 echo "=== kustomize build ==="
-TARGET=$1
-${KUSTOMIZE} build --enable_alpha_plugins ${TARGET}
+${KUSTOMIZE} build ${TARGET}
+# ${KUSTOMIZE} build --enable_alpha_plugins ${TARGET}
 
 echo "=== diff base -> target ==="
-TARGET_BASE=${EXAMPLE_ROOT}/examples/base
-diff -u <(${KUSTOMIZE} build ${TARGET_BASE}) <(${KUSTOMIZE} build ${TARGET})
+diff -u <(${KUSTOMIZE} build ${EXAMPLE_BASE}) <(${KUSTOMIZE} build ${TARGET})
