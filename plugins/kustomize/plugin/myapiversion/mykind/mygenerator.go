@@ -4,7 +4,6 @@ import (
 	"errors"
 	"io/ioutil"
 
-	apiextensionsv1beta1 "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1beta1"
 	"sigs.k8s.io/kustomize/v3/pkg/ifc"
 	"sigs.k8s.io/kustomize/v3/pkg/resmap"
 	"sigs.k8s.io/kustomize/v3/pkg/types"
@@ -47,7 +46,7 @@ type names struct {
 }
 
 type validation struct {
-	OpenAPIV3Schema *apiextensionsv1beta1.JSONSchemaProps `json:"openAPIV3Schema,omitempty"`
+	OpenAPIV3Schema *JSONSchemaProps `json:"openAPIV3Schema,omitempty"`
 }
 
 type target struct {

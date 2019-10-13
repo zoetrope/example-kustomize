@@ -15,7 +15,7 @@ setup:
 	chmod +x ${BIN_DIR}/kustomize3
 
 build: $(PLUGIN_SRC)
-	cd $(PLUGIN_DIR)/kustomize/plugin/myapiversion/mykind && go build -buildmode plugin -o mykind.so mygenerator.go
+	cd $(PLUGIN_DIR)/kustomize/plugin/myapiversion/mykind && go build -buildmode plugin -o mykind.so mygenerator.go types_jsonschema.go
 
 clean:
 	:
